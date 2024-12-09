@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistiky</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
     <header class="header">
-        <div class="container">
-            <h1>Statistiky</h1>
-            <p>Sledujte svůj pokrok a získejte důležité údaje.</p>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html" class="nav-link">Úvod</a></li>
-                    <li><a href="calendar.html" class="nav-link">Plánovač cvičení</a></li>
-                    <li><a href="stats.html" class="nav-link">Statistiky</a></li>
-                    <li><a href="contact.html" class="nav-link">Kontakt</a></li>
-                    <li><a href="about.html" class="nav-link">O nás</a></li>
-                </ul>
-            </nav>
-        </div>
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="logotracker"></a>
+        <h1>Fitness and Welness Tracker</h1>
+        <nav class="navbar">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="nav-link">Úvod</a></li>
+                <li><a href="calendar.html" class="nav-link">Plánovač cvičení</a></li>
+                <li><a href="stats.html" class="nav-link">Statistiky</a></li>
+                <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+                <li><a href="about.html" class="nav-link">O nás</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-        <section class="stats">
-            <div class="container">
-                <h2>Vaše statistiky</h2>
-                <p>Uvidíte zde grafy a údaje o své aktivitě a pokroku.</p>
-                <!-- Můžeš zde přidat grafy a statistiky -->
+    <main class="stats-layout">
+        <section class="stats-info">
+            <h2>Vaše pokroky</h2>
+            <p><strong>Celkem spálené kalorie:</strong> 15,245 kcal</p>
+            <p><strong>Celková vzdálenost:</strong> 120 km</p>
+            <p><strong>Splněné cíle:</strong> 8 z 10</p>
+            <h3>Doporučení</h3>
+            <p>Pokračujte v tréninku a nezapomeňte se pravidelně hydratovat!</p>
+            <ul>
+                <li>Zkuste přidat další cvičení s vysokou intenzitou.</li>
+                <li>Pracujte na pravidelnosti vašeho spánku.</li>
+                <li>Ujistěte se, že jíte dostatečně vyváženou stravu.</li>
+            </ul>
+        </section>
+        <section class="stats-charts">
+            <div class="stat">
+                <h2>Spálené kalorie</h2>
+                <canvas id="caloriesChart"></canvas>
+            </div>
+            <div class="stat">
+                <h2>Ujetá vzdálenost</h2>
+                <canvas id="distanceChart"></canvas>
+            </div>
+        </section>
+        <section class="goals">
+            <div class="stat">
+                <h2>Splněné cíle</h2>
+                <canvas id="goalsChart"></canvas>
             </div>
         </section>
     </main>
@@ -36,5 +65,92 @@
             <p>&copy; 2024 Fitness a Wellness Tracker. Všechna práva vyhrazena.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Data pro graf spálených kalorií
+            const caloriesCtx = document.getElementById('caloriesChart').getContext('2d');
+            new Chart(caloriesCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota', 'Neděle'],
+                    datasets: [{
+                        label: 'Spálené kalorie',
+                        data: [500, 700, 800, 600, 900, 1000, 1200],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Spálené kalorie během týdne'
+                        }
+                    }
+                }
+            });
+
+            // Data pro graf ujeté vzdálenosti
+            const distanceCtx = document.getElementById('distanceChart').getContext('2d');
+            new Chart(distanceCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota', 'Neděle'],
+                    datasets: [{
+                        label: 'Ujetá vzdálenost (km)',
+                        data: [2, 3.5, 4, 3, 5, 6, 7],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Ujetá vzdálenost během týdne'
+                        }
+                    }
+                }
+            });
+
+            // Data pro graf splněných cílů
+            const goalsCtx = document.getElementById('goalsChart').getContext('2d');
+            new Chart(goalsCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Splněno', 'Nesplněno'],
+                    datasets: [{
+                        label: 'Cíle',
+                        data: [15, 5],
+                        backgroundColor: ['#4caf50', '#f44336']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Procento splněných cílů'
+                        }
+                    }
+                }
+            });
+        });
+
+    </script>
 </body>
+
 </html>

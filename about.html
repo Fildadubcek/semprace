@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O nás</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
 </head>
+
 <body>
     <header class="header">
-        <div class="container">
-            <h1>O nás</h1>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html" class="nav-link">Úvod</a></li>
-                    <li><a href="calendar.html" class="nav-link">Plánovač cvičení</a></li>
-                    <li><a href="stats.html" class="nav-link">Statistiky</a></li>
-                    <li><a href="contact.html" class="nav-link">Kontakt</a></li>
-                    <li><a href="about.html" class="nav-link">O nás</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <section class="calendar">
-            <div class="container">
-                <h2>Vaš plán</h2>
-                <p>Zde si můžete přidat a upravit své tréninky pro každý den v týdnu.</p>
-                <!-- Můžeš zde později přidat formulář pro plánování tréninků -->
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="logotracker"></a>
+        <h1>Fitness and Welness Tracker</h1>
+        <nav class="navbar">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
+            <ul id="nav-menu">
+                <li><a href="index.html" class="nav-link">Úvod</a></li>
+                <li><a href="calendar.html" class="nav-link">Plánovač cvičení</a></li>
+                <li><a href="stats.html" class="nav-link">Statistiky</a></li>
+                <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+                <li><a href="about.html" class="nav-link">O nás</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="about-layout">
+        <!-- Sekce příběhu -->
+        <section class="about-story">
+            <h2>Náš příběh</h2>
+            <p>
+                Fitness and Wellness Tracker vznikl z touhy vytvořit platformu, která propojuje lidi s jejich osobními
+                cíli v oblasti zdraví, fitness a životní pohody.
+                Naše cesta začala, když jsme si uvědomili, jak obtížné může být sledovat pokrok a udržet si motivaci.
+                Proto jsme vytvořili aplikaci, která usnadňuje plánování, sledování a zlepšování vašeho životního stylu.
+            </p>
         </section>
+
+        <!-- Sekce poslání -->
+        <section class="about-mission">
+            <h2>Naše poslání</h2>
+            <p>
+                Naším posláním je pomáhat lidem na jejich cestě k lepšímu zdraví a kondici. Věříme, že každý krok, byť
+                malý, může vést k velkým změnám.
+                S naším nástrojem můžete snadno sledovat svůj pokrok, plánovat tréninky a motivovat se k dosažení svých
+                cílů.
+            </p>
+        </section>
+
+        <!-- Sekce hodnot -->
+        <section class="about-values">
+            <h2>Naše hodnoty</h2>
+            <ul>
+                <li><strong>Jednoduchost:</strong> Vytváříme nástroje, které jsou snadno použitelné pro všechny.</li>
+                <li><strong>Komunita:</strong> Spojujeme lidi, kteří sdílejí podobné cíle a zájmy.</li>
+                <li><strong>Progres:</strong> Pomáháme vám vidět a měřit každý váš krok na cestě za lepším já.</li>
+                <li><strong>Inovace:</strong> Neustále hledáme nové způsoby, jak zlepšit vaši uživatelskou zkušenost.
+                </li>
+            </ul>
+        </section>
+
+
     </main>
     <footer class="footer">
         <div class="container">
@@ -36,4 +71,5 @@
         </div>
     </footer>
 </body>
+
 </html>

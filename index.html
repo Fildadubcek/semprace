@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness a Wellness Tracker</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+
 </head>
+
 <body>
-    <header class="header">
-        <div class="container">
-            <img class="logo" src="img/logo.png" alt="logotracker">
-            <h1>Fitness a Wellness Tracker</h1>
-            <p>Sledujte svůj pokrok a dosáhněte svých cílů!</p>
-            <!-- Navigační menu -->
+    <div class="container">
+        <header class="header">
+            <a href="index.html"><img class="logo" src="img/logo.png" alt="logotracker"></a>
+            <h1>Fitness and Welness Tracker</h1>
             <nav class="navbar">
-                <ul>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul id="nav-menu">
                     <li><a href="index.html" class="nav-link">Úvod</a></li>
                     <li><a href="calendar.html" class="nav-link">Plánovač cvičení</a></li>
                     <li><a href="stats.html" class="nav-link">Statistiky</a></li>
@@ -22,40 +30,77 @@
                     <li><a href="about.html" class="nav-link">O nás</a></li>
                 </ul>
             </nav>
-            <a href="calendar.html" class="btn">Zjistit více</a>
-        </div>
-    </header>
-    <main>
-        <section id="features" class="features">
-            <div class="container">
-                <h2>Naše funkce</h2>
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <h3>Plánovač cvičení</h3>
-                        <p>Upravte svůj trénink podle vašich potřeb.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>Statistiky</h3>
-                        <p>Sledujte své pokroky pomocí grafů a analýz.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>Motivace</h3>
-                        <p>Získejte tipy a triky pro zdravý životní styl.</p>
-                    </div>
+        </header>
+        <main>
+            <section id="intro" class="intro">
+                <div class="container">
+                    <h2>Vítejte na Fitness a Wellness Tracker</h2>
+                    <p>Naše aplikace vám pomůže sledovat váš pokrok, plánovat tréninky a dosáhnout vašich fitness cílů.
+                        Připojte se k naší komunitě a začněte svou cestu ke zdravějšímu životnímu stylu ještě dnes!</p>
+                    <a href="about.html" class="btn">Zjistit více</a>
                 </div>
-            </div>
-        </section>
-        <section class="cta">
-            <div class="container">
-                <h2>Připraveni začít?</h2>
-                <a href="calendar.html" class="btn">Připojte se k nám</a>
-            </div>
-        </section>
+            </section>
+            <section id="features" class="features">
+                <h2>Naše funkce</h2>
+                <div class="cards">
+                    <a class="cards-link" href="calendar.html">
+                        <div class="feature-item">
+                            <h3>Plánovač cvičení</h3>
+                            <p>Upravte svůj trénink podle vašich potřeb.</p>
+                            <span class="material-symbols-outlined">
+                                fitness_center
+                            </span>
+                        </div>
+                    </a>
+                    <a class="cards-link" href="stats.html">
+                        <div class="feature-item">
+                            <h3>Statistiky</h3>
+                            <p>Sledujte své pokroky pomocí grafů a analýz.</p>
+                            <span class="material-symbols-outlined">
+                                monitoring
+                            </span>
+                        </div>
+                    </a>
+                    <a class="cards-link" href="#">
+                        <div class="feature-item">
+                            <h3>Motivace</h3>
+                            <p>Získejte tipy a triky pro zdravý životní styl.</p>
+                            <span class="material-symbols-outlined">
+                                cognition_2
+                            </span>
+                        </div>
+                    </a>
+                    <a class="cards-link" href="#">
+                        <div class="feature-item">
+                            <h3>Výživové plány</h3>
+                            <p>Vytvořte si vlastní výživový plán a sledujte svůj příjem kalorií.</p>
+                            <span class="material-symbols-outlined">
+                                restaurant
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+    </div>
+    </section>
+
     </main>
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Fitness a Wellness Tracker. Všechna práva vyhrazena.</p>
         </div>
+        <script>
+            function toggleMenu() {
+                const navMenu = document.getElementById('nav-menu');
+                if (navMenu) {
+                    navMenu.classList.toggle('active');
+                } else {
+                    console.error('Element with ID "nav-menu" not found.');
+                }
+            }
+        </script>
     </footer>
+    </div>
 </body>
+
 </html>
