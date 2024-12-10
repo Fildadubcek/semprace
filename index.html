@@ -12,10 +12,11 @@
 </head>
 
 <body>
-    <div class="container">
-        <header class="header">
-            <a href="index.html"><img class="logo" src="img/logo.png" alt="logotracker"></a>
-            <h1>Fitness and Welness Tracker</h1>
+    <div class="container-intro">
+        <div class="backgrounds">
+        <header class="header-intro">
+            <a class="logo-odkaz" href="index.html"><img class="logo" src="img/logo.png" alt="logotracker"></a>
+            <h1 class="header-title">Fitness a Wellness Tracker</h1>
             <nav class="navbar">
                 <div class="hamburger" onclick="toggleMenu()">
                     <div></div>
@@ -24,22 +25,24 @@
                 </div>
                 <ul id="nav-menu">
                     <li><a href="index.html" class="nav-link">Úvod</a></li>
-                    <li><a href="calendar.html" class="nav-link">Plánovač cvičení</a></li>
+                    <!-- <li><a href="calendar.html" class="nav-link">Plánovač cvičení</a></li> -->
                     <li><a href="stats.html" class="nav-link">Statistiky</a></li>
                     <li><a href="contact.html" class="nav-link">Kontakt</a></li>
                     <li><a href="about.html" class="nav-link">O nás</a></li>
+                    <li><a href="#" class="login">Registrace</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <section id="intro" class="intro">
-                <div class="container">
+                <div class="intro-headline">
                     <h2>Vítejte na Fitness a Wellness Tracker</h2>
                     <p>Naše aplikace vám pomůže sledovat váš pokrok, plánovat tréninky a dosáhnout vašich fitness cílů.
                         Připojte se k naší komunitě a začněte svou cestu ke zdravějšímu životnímu stylu ještě dnes!</p>
                     <a href="about.html" class="btn">Zjistit více</a>
                 </div>
             </section>
+        </div>
             <section id="features" class="features">
                 <h2>Naše funkce</h2>
                 <div class="cards">
@@ -86,9 +89,7 @@
 
     </main>
     <footer class="footer">
-        <div class="container">
             <p>&copy; 2024 Fitness a Wellness Tracker. Všechna práva vyhrazena.</p>
-        </div>
         <script>
             function toggleMenu() {
                 const navMenu = document.getElementById('nav-menu');
