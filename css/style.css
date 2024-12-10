@@ -149,7 +149,6 @@ body {
 .container-intro {
     position: relative; /* Ujistěte se, že je kontejner relativně pozicovaný */
     background-color: rgba(0, 0, 0, 0.478);
-    background-image: url(/img/mozna.jpg);
     opacity: 0.9;
     background-size: contain;
     z-index: 1; /* Ujistěte se, že obsah bude nad pseudo-elementem */
@@ -168,7 +167,7 @@ body {
 
 .intro h2 {
     font-size: 2rem;
-    color: #3438ff;
+    color: #34aeff;
     margin-bottom: 1rem;
     font-weight: 800;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
