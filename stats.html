@@ -22,10 +22,11 @@
             </div>
             <ul id="nav-menu">
                 <li><a href="index.html" class="nav-link">Úvod</a></li>
-                <li><a href="calendar.html" class="nav-link">Plánovač cvičení</a></li>
                 <li><a href="stats.html" class="nav-link">Statistiky</a></li>
                 <li><a href="contact.html" class="nav-link">Kontakt</a></li>
                 <li><a href="about.html" class="nav-link">O nás</a></li>
+                <li><a href="login.html" class="nav-link">Příhlásit se</a></li>
+                <li><a href="register.html" class="nav-link">Registrace</a></li>
             </ul>
         </nav>
     </header>
@@ -59,98 +60,136 @@
                 <canvas id="goalsChart"></canvas>
             </div>
         </section>
+        <section class="history">
+            <h2>Historie cvičení</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Typ cvičení</th>
+                        <th>Trvání</th>
+                        <th>Spálené kalorie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01.01.2023</td>
+                        <td>Běh</td>
+                        <td>30 min</td>
+                        <td>300 kcal</td>
+                    </tr>
+                    <tr>
+                        <td>02.01.2023</td>
+                        <td>Jóga</td>
+                        <td>45 min</td>
+                        <td>200 kcal</td>
+                    </tr>
+                    <!-- Další záznamy -->
+                </tbody>
+            </table>
+        </section>
+        <section class="motivational-quotes">
+            <h2>Motivační citáty</h2>
+            <blockquote>"Úspěch není konečný, neúspěch není fatální: to, co se počítá, je odvaha pokračovat." - Winston
+                Churchill</blockquote>
+            <blockquote>"Nezáleží na tom, jak pomalu jdeš, dokud nezastavíš." - Konfucius</blockquote>
+        </section>
     </main>
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Fitness a Wellness Tracker. Všechna práva vyhrazena.</p>
-        </div>
+        <p>&copy; 2024 Fitness a Wellness Tracker. Všechna práva vyhrazena.</p>
+
     </footer>
+
+
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Data pro graf spálených kalorií
-            const caloriesCtx = document.getElementById('caloriesChart').getContext('2d');
-            new Chart(caloriesCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota', 'Neděle'],
-                    datasets: [{
-                        label: 'Spálené kalorie',
-                        data: [500, 700, 800, 600, 900, 1000, 1200],
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        title: {
-                            display: true,
-                            text: 'Spálené kalorie během týdne'
-                        }
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            if (navMenu) {
+                navMenu.classList.toggle('active');
+            } else {
+                console.error('Element with ID "nav-menu" not found.');
+            }
+        }
+        const ctxCalories = document.getElementById('caloriesChart').getContext('2d');
+        const caloriesChart = new Chart(ctxCalories, {
+            type: 'line',
+            data: {
+                labels: ['Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota', 'Neděle'],
+                datasets: [{
+                    label: 'Spálené kalorie',
+                    data: [200, 450, 300, 500, 700, 600, 800],
+                    backgroundColor: 'rgba(52, 174, 255, 0.2)',
+                    borderColor: '#34aeff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
                     }
                 }
-            });
-
-            // Data pro graf ujeté vzdálenosti
-            const distanceCtx = document.getElementById('distanceChart').getContext('2d');
-            new Chart(distanceCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota', 'Neděle'],
-                    datasets: [{
-                        label: 'Ujetá vzdálenost (km)',
-                        data: [2, 3.5, 4, 3, 5, 6, 7],
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        title: {
-                            display: true,
-                            text: 'Ujetá vzdálenost během týdne'
-                        }
-                    }
-                }
-            });
-
-            // Data pro graf splněných cílů
-            const goalsCtx = document.getElementById('goalsChart').getContext('2d');
-            new Chart(goalsCtx, {
-                type: 'pie',
-                data: {
-                    labels: ['Splněno', 'Nesplněno'],
-                    datasets: [{
-                        label: 'Cíle',
-                        data: [15, 5],
-                        backgroundColor: ['#4caf50', '#f44336']
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        title: {
-                            display: true,
-                            text: 'Procento splněných cílů'
-                        }
-                    }
-                }
-            });
+            }
         });
 
+        const ctxDistance = document.getElementById('distanceChart').getContext('2d');
+        const distanceChart = new Chart(ctxDistance, {
+            type: 'bar',
+            data: {
+                labels: ['Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota', 'Neděle'],
+                datasets: [{
+                    label: 'Ujetá vzdálenost (km)',
+                    data: [5, 10, 7, 12, 15, 14, 20],
+                    backgroundColor: 'rgba(52, 174, 255, 0.2)',
+                    borderColor: '#34aeff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctxGoals = document.getElementById('goalsChart').getContext('2d');
+        const goalsChart = new Chart(ctxGoals, {
+            type: 'doughnut',
+            data: {
+                labels: ['Splněné cíle', 'Nesplněné cíle'],
+                datasets: [{
+                    label: 'Splněné cíle',
+                    data: [8, 2],
+                    backgroundColor: ['#34aeff', '#f4f4f4'],
+                    borderColor: ['#34aeff', '#f4f4f4'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + ' cílů';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
     </script>
 </body>
-
 </html>

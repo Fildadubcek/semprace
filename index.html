@@ -30,7 +30,8 @@
                     <li><a href="stats.html" class="nav-link">Statistiky</a></li>
                     <li><a href="contact.html" class="nav-link">Kontakt</a></li>
                     <li><a href="about.html" class="nav-link">O nás</a></li>
-                    <li><a href="#" class="login">Registrace</a></li>
+                    <li><a href="login.html" class="nav-link">Příhlásit se</a></li>
+                    <li><a href="register.html" class="nav-link">Registrace</a></li>
                 </ul>
             </nav>
         </header>
@@ -91,18 +92,18 @@
     </main>
     <footer class="footer">
             <p>&copy; 2024 Fitness a Wellness Tracker. Všechna práva vyhrazena.</p>
-        <script>
-            function toggleMenu() {
-                const navMenu = document.getElementById('nav-menu');
-                if (navMenu) {
-                    navMenu.classList.toggle('active');
-                } else {
-                    console.error('Element with ID "nav-menu" not found.');
-                }
-            }
-        </script>
+       
     </footer>
     </div>
 </body>
-
+<script>
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        if (navMenu) {
+            navMenu.classList.toggle('active');
+        } else {
+            console.error('Element with ID "nav-menu" not found.');
+        }
+    }
+</script>
 </html>

@@ -8,8 +8,12 @@ body {
     color: #333;
 }
 
+
+/* index.html */
 .container {
     max-width: 100%;
+    background: white(0, 0, 0, 0.5);
+
 }
 
 .header-intro {
@@ -18,7 +22,7 @@ body {
     height: 15vh;
 }
 .header {
-    background: #3438ff;
+    background: #2575fc;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -59,22 +63,8 @@ body {
 
 }
 
-.login {
-    text-decoration: none;
-    color: #fff;
-    font-size: 2vh;
-    font-weight: bold;
-    transition: color 0.3s;
-    text-transform: uppercase;
-    margin: 0 1rem;
-}
-
-.login:hover {
-    color: #3438ff;
-}
-
 .navbar .nav-link:hover {
-    color: #3438ff;
+    color: #34aeff;
 }
 
 .cards {
@@ -112,7 +102,7 @@ body {
 }
 
 .feature-item h3 {
-    color: #2575fc;
+    color: #34aeff;
     margin-top: 0;
     font-size: 1.5rem;
 }
@@ -134,12 +124,6 @@ body {
     margin: 10% 10%;
 }
 
-.nadpis {
-    font-size: 1.5rem;
-    margin: 2%;
-    color: #fff;
-}
-
 .intro {
     padding: 2rem 0;
     width: 100%;
@@ -147,11 +131,13 @@ body {
 }
 
 .container-intro {
-    position: relative; /* Ujistěte se, že je kontejner relativně pozicovaný */
+    position: relative; 
     background-color: rgba(0, 0, 0, 0.478);
     opacity: 0.9;
-    background-size: contain;
-    z-index: 1; /* Ujistěte se, že obsah bude nad pseudo-elementem */
+    background-size:cover;
+    background-position:right;
+    background-repeat: no-repeat;
+    z-index: 1; 
 }
 
 .container-intro::before {
@@ -161,8 +147,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Tmavá průhledná vrstva */
-    z-index: -1; /* Ujistěte se, že pseudo-element bude pod obsahem */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
 }
 
 .intro h2 {
@@ -190,7 +176,7 @@ body {
 }
 
 .intro .btn {
-    background-color: #2575fc;
+    background-color: #34aeff;
     color: #fff;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
@@ -201,7 +187,7 @@ body {
 .intro .btn:hover {
     background-color: #1a5bb8;
 }
-
+/* ikony */
 span.material-symbols-outlined {
     font-size: 48px;
     display: block;
@@ -209,6 +195,7 @@ span.material-symbols-outlined {
     width: auto;
 }
 
+/* responsive menu */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -224,13 +211,13 @@ span.material-symbols-outlined {
     transition: 0.4s;
 }
 
-.workout-planner {
+/* .workout-planner {
     width: 80%;
     height: auto;
     margin: auto;
-}
+} */
 
-.cld-btn {
+/* .cld-btn {
     background-color: #2575fc;
     color: #fff;
     padding: 0.75rem 1.5rem;
@@ -241,66 +228,91 @@ span.material-symbols-outlined {
     width: fit-content;
     height: auto;
     margin-bottom: 2%;
-}
+} */
 
+/* statistiky */
 .stats-layout {
-    display: flex;
     max-width: 1200px;
     margin: 20px auto;
-    gap: 20px;
     padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .stats-info {
-    flex: 1;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 .stats-info h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 15px;
 }
 
-.stats-info h3 {
-    font-size: 1.4rem;
-    margin-top: 20px;
+.stats-info p {
+    font-size: 1.1rem;
+    color: #555;
 }
 
-.stats-charts {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.stats-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.stats-info li {
+    margin-bottom: 10px;
+}
+
+.stats-charts, .goals, .history, .motivational-quotes {
+    margin-bottom: 30px;
 }
 
 .stat {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
+    margin-bottom: 20px;
+    flex: 1;
+    min-width: 50%;
+    max-width: 50%;
+    margin: 1%;
 }
 
 .stat h2 {
-    margin-bottom: 15px;
     font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-canvas {
-    max-width: 100%;
-    height: auto;
+.history table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
+.history th, .history td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.history th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.motivational-quotes blockquote {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 5px solid #34aeff;
+    background-color: #f9f9f9;
+}
+
+/* kontaktní formulář */
 .contact-layout {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 20px auto;
-    gap: 20px;
-    padding: 20px;
+    max-width: 80%;
+    margin: 3% auto;
+    gap: 2%;
+    padding: 3%;
 }
 
 .contact-info,
@@ -321,6 +333,7 @@ canvas {
 
 .contact-form {
     margin-bottom: 20px;
+    padding-right:2%;
 }
 
 form label {
@@ -332,7 +345,7 @@ form label {
 form input,
 form textarea,
 form button {
-    width: 100%;
+    width: 80%;
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -341,33 +354,32 @@ form button {
 }
 
 form button {
-    background-color: #007bff;
+    background-color: #34aeff;
     color: white;
     border: none;
     cursor: pointer;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 form button:hover {
     background-color: #0056b3;
+    transition: background-color 0.3s;
 }
 
 .contact-map iframe {
     border-radius: 10px;
+    width: 100%;
 }
 
+
+/* o nás */
 .about-layout {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
 }
 
-.about-layout section {
-    margin-bottom: 30px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 .about-layout h2 {
     font-size: 2rem;
@@ -383,15 +395,129 @@ form button:hover {
     margin-bottom: 10px;
 }
 
+.about-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-intro h1 {
+    font-size: 2.5rem;
+    margin:0;
+}
+
+.about-intro p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.about-values {
+    margin-bottom: 30px;
+}
+
+.about-values h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about-values ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-values li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.about-team {
+    text-align: center;
+}
+
+.about-team h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 30%;
+}
+
+.team-member.left {
+    align-self: flex-start;
+}
+
+.team-member.right {
+    align-self: flex-end;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #777;
+}
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+@media (max-width: 768px) {
+    .team-member {
+        width: 100%;
+    }
+}
+/*login / register */
+.login-form {
+    max-width: 40%;
+    margin: 5% auto;
+    padding: 5%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity:0.9;
+    background-color: rgba(0, 0, 0, 0.8);
+    color:#ffffff;
+}
+
 /* Responzivita */
 @media (max-width: 1300px) {
     .navbar .nav-link {
         font-size: 2.5vh;
     }
 
-    h1 {
-        display: none;
-    }
+  
 }
 
 @media (max-width: 1024px) {
@@ -405,10 +531,10 @@ form button:hover {
 
     .navbar ul {
         flex-direction: column;
-        position: fixed;
-        top: 60px;
+        position: absolute;
+        top:60px;
         right: 0;
-        background-color: #3438ff;
+        background-color: #34aeff;
         width: 100%;
         max-height: 0;
         overflow: hidden;
@@ -437,7 +563,19 @@ form button:hover {
     .header h1 {
         font-size: 2rem;
     }
-
+    .header-title {
+        display:none;
+        
+    }
+    .intro-headline {
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 8%;
+        padding: 1%;
+    }
+    .intro {
+        height: 60vh;
+    }
     .cards {
         grid-template-columns: 1fr;
     }
