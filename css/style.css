@@ -10,11 +10,6 @@ body {
 
 
 /* index.html */
-.container {
-    max-width: 100%;
-    background: white(0, 0, 0, 0.5);
-
-}
 
 .header-intro {
     color: #fff;
@@ -211,25 +206,6 @@ span.material-symbols-outlined {
     transition: 0.4s;
 }
 
-/* .workout-planner {
-    width: 80%;
-    height: auto;
-    margin: auto;
-} */
-
-/* .cld-btn {
-    background-color: #2575fc;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    display: block;
-    width: fit-content;
-    height: auto;
-    margin-bottom: 2%;
-} */
-
 /* statistiky */
 .stats-layout {
     max-width: 1200px;
@@ -336,15 +312,15 @@ span.material-symbols-outlined {
     padding-right:2%;
 }
 
-form label {
+.contact-form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-form input,
-form textarea,
-form button {
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
     width: 80%;
     margin-bottom: 15px;
     padding: 10px;
@@ -353,7 +329,7 @@ form button {
     font-size: 1rem;
 }
 
-form button {
+.contact-form button {
     background-color: #34aeff;
     color: white;
     border: none;
@@ -362,7 +338,7 @@ form button {
     margin-right:auto;
 }
 
-form button:hover {
+.contact-form button:hover {
     background-color: #0056b3;
     transition: background-color 0.3s;
 }
@@ -493,22 +469,262 @@ hr {
     border: none;
     border-top: 1px solid #ccc;
 }
+/*login page*/  
+
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #5fdfff, #7b9efe);
+
+}
+
+/* Container */
+.container-login {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    height: 90vh;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+}
+
+/* Left Section */
+.left-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #5fdfff, #7b9efe);
+    position: relative;
+}
+
+.left-section img {
+    width:100%;
+    max-height: 100%;
+}
+
+.right-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.input-field input {
+    width: 95.5%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.remember-forgot a {
+    color: #34aeff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.sign-in-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #34aeff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background 0.3s ease;
+}
+
+.sign-in-btn:hover {
+    background-color: #1343e2;
+}
+
+/* Divider */
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    color: #888;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.social-login {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.social-btn {
+    width: 48%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.google {
+    background-color: #4285f4;
+}
+
+.apple {
+    background-color: #333;
+}
+
+.social-btn:hover {
+    opacity: 0.8;
+}
+
+/* Signup Text */
+.signup-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.signup-text a {
+    color: #34aeff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
 @media (max-width: 768px) {
-    .team-member {
+    .container-login {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-section {
+        display: none; /* Hide the left section */
+    }
+
+    .right-section {
+        padding: 20px;
+        flex: 1;
+    }
+
+    .right-section h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .sign-in-btn {
+        font-size: 0.9rem;
+    }
+
+    .social-login {
+        flex-direction: column;
+    }
+
+    .social-btn {
         width: 100%;
+        margin-bottom: 10px;
     }
 }
-/*login / register */
-.login-form {
-    max-width: 40%;
-    margin: 5% auto;
-    padding: 5%;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    opacity:0.9;
-    background-color: rgba(0, 0, 0, 0.8);
-    color:#ffffff;
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    #login {
+        padding: 10px;
+    }
+
+    .right-section {
+        padding: 15px;
+    }
+
+    .right-section h1 {
+        font-size: 1.3rem;
+    }
+
+    .input-field input {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .sign-in-btn {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .remember-forgot {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.8rem;
+    }
+
+    .remember-forgot a {
+        margin-top: 5px;
+    }
+
+    .signup-text {
+        font-size: 0.8rem;
+    }
 }
 
 /* Responzivita */
@@ -524,7 +740,9 @@ hr {
     .header h1 {
         font-size: 2.5rem;
     }
-
+    .container-intro {
+        background-size:auto;
+    }
     .cards {
         grid-template-columns: 1fr 1fr;
     }
@@ -574,7 +792,7 @@ hr {
         padding: 1%;
     }
     .intro {
-        height: 60vh;
+        height: 70vh;
     }
     .cards {
         grid-template-columns: 1fr;
@@ -586,5 +804,8 @@ hr {
 
     .navbar li {
         margin: 10px 0;
+    }
+    .team-member {
+        width: 100%;
     }
 }
