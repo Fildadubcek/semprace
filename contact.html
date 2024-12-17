@@ -1,93 +1,99 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt</title>
+    <title>Fitness a Wellness Tracker - Kontakt</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <style>
+        /* Základní styly stránky */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        
+        
+
+        
+    </style>
 </head>
-
 <body>
-    <div class="container">
-        <header class="header">
-            <a href="index.html"><img class="logo" src="img/logo.png" alt="logotracker"></a>
-            <h1 class="header-title">Fitness and Welness Tracker</h1>
-            <nav class="navbar">
-                <div class="hamburger" onclick="toggleMenu()">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <ul id="nav-menu">
-                    <li><a href="index.html" class="nav-link">Úvod</a></li>
-                    <li><a href="stats.html" class="nav-link">Statistiky</a></li>
-                    <li><a href="contact.html" class="nav-link">Kontakt</a></li>
-                    <li><a href="about.html" class="nav-link">O nás</a></li>
-                    <li><a href="login.html" class="nav-link">Příhlásit se</a></li>
-                    <li><a href="register.html" class="nav-link">Registrace</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main class="contact-layout">
-            <!-- Levá část s kontaktními informacemi -->
-            <section class="contact-info">
-                <h2>Naše kontaktní informace</h2>
-                <p><strong>Email:</strong> support@fitness-tracker.cz</p>
-                <p><strong>Telefon:</strong> +420 123 456 789</p>
-                <p><strong>Adresa:</strong> Fitness & Wellness Tracker, Nová 123, Praha, Česká republika</p>
-                <h3>Pracovní doba</h3>
-                <p>Pondělí - Pátek: 8:00 - 18:00</p>
-                <p>Sobota - Neděle: 10:00 - 16:00</p>
-            </section>
-
-            <!-- Pravá část s formulářem a mapou -->
-            <section class="contact-form-map">
-                <!-- Formulář -->
-                <div class="contact-form">
-                    <h2>Kontaktujte nás</h2>
-                    <form class="contact-form" action="#" method="post">
-                        <label for="name">Vaše jméno:</label>
-                        <input type="text" id="name" name="name" placeholder="Zadejte své jméno" required>
-
-                        <label for="email">Váš email:</label>
-                        <input type="email" id="email" name="email" placeholder="Zadejte svůj email" required>
-
-                        <label for="message">Vaše zpráva:</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Zde napište vaši zprávu..."
-                            required></textarea>
-
-                        <button type="submit">Odeslat</button>
-                    </form>
-                </div>
-
-                <!-- Mapa -->
-                <div class="contact-map">
-                    <h2>Kde nás najdete</h2>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.8216796285183!2d15.764812676809848!3d50.03343711730157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dccc33b38a121%3A0x3b1590db8ad8b477!2sUniverzita%20Pardubice%20-%20Fakulta%20elektrotechniky%20a%20informatiky!5e0!3m2!1scs!2scz!4v1733741018563!5m2!1scs!2scz"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="container">
-                <p>&copy; 2024 Fitness a Wellness Tracker. Všechna práva vyhrazena.</p>
+    <!-- Hlavička -->
+    <header class="header">
+        <a class="logo-odkaz" href="index.html"><img class="logo" src="img/logo.png" alt="logotracker"></a>
+        <h1 class="header-title">Fitness a Wellness Tracker</h1>
+        <nav class="navbar">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-            <script>
-                function toggleMenu() {
-                    const navMenu = document.getElementById('nav-menu');
-                    if (navMenu) {
-                        navMenu.classList.toggle('active');
-                    } else {
-                        console.error('Element with ID "nav-menu" not found.');
-                    }
-                }
-            </script>
-        </footer>
-    </div>
-</body>
+            <ul id="nav-menu">
+                <li class="close-btn">&times;</li> 
+                <li><a href="index.html" class="nav-link">Úvod</a></li>
+                <!-- <li><a href="calendar.html" class="nav-link">Plánovač cvičení</a></li> -->
+                <li><a href="stats.html" class="nav-link">Statistiky</a></li>
+                <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+                <li><a href="about.html" class="nav-link">O nás</a></li>
+                <li><a href="login.html" class="nav-link">Příhlásit se</a></li>
+                <li><a href="register.html" class="nav-link">Registrace</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Hlavní obsah -->
+    <div class="contact-container">
+        <div class="left-content">
+            <h2>Buďme ve spojení!</h2>
+            <p>
+                Máte dotaz ohledně aplikace? Rádi vám pomůžeme! Vyplňte formulář a my se vám co nejdříve ozveme.
+            </p>
+            <p>
+                <strong>Email:</strong> support@fitwelltracker.cz<br>
+                <strong>Telefon:</strong> +420 123 456 789
+            </p>
+            <div class="contact-map">
+                <h2>Kde nás najdete</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.8216796285183!2d15.764812676809848!3d50.03343711730157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470dccc33b38a121%3A0x3b1590db8ad8b477!2sUniverzita%20Pardubice%20-%20Fakulta%20elektrotechniky%20a%20informatiky!5e0!3m2!1scs!2scz!4v1733741018563!5m2!1scs!2scz"
+                    width="250" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="right-content">
+            <form class="contact-form"> 
+                <h2>Pošlete nám zprávu 💪</h2>
+                <input type="text" placeholder="Vaše jméno*" required>
+                <input type="email" placeholder="Váš email*" required>
+                <input type="text" placeholder="Předmět" required>
+                <textarea rows="5" placeholder="Vaše zpráva*" required></textarea>
+                <button class="contact-btn" type="submit">Odeslat zprávu</button>
+            </form>
+        </div>
+    </div>
+    
+
+
+    <!-- Patička -->
+    <footer class="footer">
+        &copy; 2024 Fitness a Wellness Tracker | Všechna práva vyhrazena
+    </footer>
+</body>
+<script>
+     function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        if (navMenu) {
+            navMenu.classList.toggle('active');
+        } else {
+            console.error('Element with ID "nav-menu" not found.');
+        }
+    }
+    document.querySelector('.close-btn').addEventListener('click', function() {
+    document.querySelector('.navbar ul').classList.remove('active');
+});
+</script>
 </html>
