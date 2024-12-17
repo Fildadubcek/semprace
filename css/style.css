@@ -654,6 +654,11 @@ hr {
 .signup-text a:hover {
     text-decoration: underline;
 }
+
+.navbar ul .close-btn {
+    display: none;
+}
+/* Responzivita */
 @media (max-width: 768px) {
     .container-login {
         flex-direction: column;
@@ -661,7 +666,7 @@ hr {
     }
 
     .left-section {
-        display: none; /* Hide the left section */
+        display: none; 
     }
 
     .right-section {
@@ -688,7 +693,6 @@ hr {
     }
 }
 
-/* For mobile devices */
 @media (max-width: 480px) {
     #login {
         padding: 10px;
@@ -727,7 +731,6 @@ hr {
     }
 }
 
-/* Responzivita */
 @media (max-width: 1300px) {
     .navbar .nav-link {
         font-size: 2.5vh;
@@ -749,29 +752,36 @@ hr {
 
     .navbar ul {
         flex-direction: column;
-        position: absolute;
-        top:60px;
-        right: 0;
+        position: fixed;
+        top:0;
+        right: -100%;
         background-color: #34aeff;
-        width: 100%;
-        max-height: 0;
+        width: 250px; /* Nastavte šířku menu podle potřeby */
+        height: 100%;
         overflow: hidden;
         justify-content: center;
         align-items: center;
         opacity: 0;
-        transition: max-height 0.5s ease, opacity 0.5s ease;
+        transition: right 0.5s ease, opacity 0.5s ease;
     }
-
+    
     .navbar ul.active {
-        display: flex;
+        right: 0;
         opacity: 1;
-        max-height: 100vh;
     }
 
     .navbar ul li {
         margin: 1rem 0;
     }
-
+    .navbar ul .close-btn {
+        display:inline;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        font-size: 36px;
+    }
     .hamburger {
         display: flex;
     }
