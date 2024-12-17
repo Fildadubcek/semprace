@@ -286,8 +286,10 @@ span.material-symbols-outlined {
 
 .contact-container {
     display: flex;
+    width:80%;
+    margin:auto;
     justify-content: center;
-    align-items: flex-start; /* Změněno z center na flex-start */
+    align-items: center; /* Změněno z center na flex-start */
     flex-wrap: wrap;
     padding: 2rem;
 }
@@ -308,6 +310,13 @@ span.material-symbols-outlined {
     color: #34aeff;
     font-size: 2rem;
    
+}
+.contact-map {
+    width:80%;
+    min-width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    margin:auto;
 }
 .contact-map iframe {
     width: 100%;
