@@ -21,6 +21,7 @@
                 <div></div>
             </div>
             <ul id="nav-menu">
+                <li class="close-btn">&times;</li> 
                 <li><a href="index.html" class="nav-link">Úvod</a></li>
                 <li><a href="stats.html" class="nav-link">Statistiky</a></li>
                 <li><a href="contact.html" class="nav-link">Kontakt</a></li>
@@ -190,6 +191,9 @@
                 }
             }
         });
+        document.querySelector('.close-btn').addEventListener('click', function() {
+    document.querySelector('.navbar ul').classList.remove('active');
+});
     </script>
 </body>
 </html>
